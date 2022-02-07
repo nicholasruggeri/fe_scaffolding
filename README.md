@@ -4,4 +4,3 @@
 2. Install dependencies:  `$ npm i`
 3. Run locally: `$ npm start`
 4. Build static: `$ npm run build:static`
-5. Build prod for Wordpress: `$ npm run build`

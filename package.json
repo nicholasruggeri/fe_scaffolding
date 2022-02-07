@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "gulp",
-    "build:static": "gulp build:static",
-    "build": "gulp sync"
+    "build:static": "gulp build:static"
   },
   "repository": {
     "type": "git",
