@@ -1,0 +1,65 @@
+@function rem($pxval) {
+    @if not unitless($pxval) {
+        $pxval: strip-units($pxval);
+    }
+    @return ($pxval / $baseFontSize) * 1rem;
+}
+
+@function color($color) {
+    @return map-get($colors,$color);
+};
+
+@mixin bp($m) {
+    @include breakpoint(map-get($mq,$m)) {
+         @content;
+    }
+}
+
+@mixin fill() {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@mixin imgPad($u:null,$v:null) {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    @if $u and $v {
+        padding-bottom: percentage($v/$u);
+    }
+    > picture,
+    > picture > img,
+    > img,
+    > svg {
+        @include fill();
+        object-fit: cover;
+    }
+}
+
+@mixin hover() {
+    .no-touch & {
+        &:hover {
+            @content
+        }
+    }
+}
+
+@mixin wrap($maxWidth:1440) {
+    max-width: rem(1300);
+    margin: 0 auto;
+    padding: 0 rem(30);
+    @include bp(large) {
+        padding: 0 rem(60);
+    }
+    @include bp(wide) {
+        max-width: rem(1440);
+    }
+}
+
+@function col($col) {
+    @return calc(#{$col}/24*100vw);
+};

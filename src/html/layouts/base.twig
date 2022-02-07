@@ -1,0 +1,21 @@
+<!doctype html>
+
+<html lang="it">
+
+    {% include 'partials/head.twig' with {
+        title: 'Wp Scaffolding Blendmodes'
+    }%}
+
+    <body class="page-is-loading">
+
+        {% include 'partials/header.twig' %}
+
+        <div class="m-site">
+            {% block content %}{% endblock %}
+        </div>
+
+        {% include 'partials/footer.twig' %}
+
+        <script src="assets/js/script.js"></script>
+    </body>
+</html>

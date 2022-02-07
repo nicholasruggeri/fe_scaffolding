@@ -1,0 +1,18 @@
+html {
+    font-size: 10px;
+    font-weight: 100;
+    box-sizing: border-box;
+}
+
+body {
+    color: color(black);
+
+    *, *:before, *:after {
+        box-sizing: border-box;
+        user-select: none;
+        -webkit-text-size-adjust: none;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
